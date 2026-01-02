@@ -16,8 +16,10 @@ def vypis_ukolu(depository):
 def vymaz_obrazovku():
     print("\n" * 100)
 
+
 def smaz_ukol(index):
     uloziste.pop(index)
+
 
 uloziste=[]
 k=""
