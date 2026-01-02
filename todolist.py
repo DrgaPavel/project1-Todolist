@@ -6,9 +6,6 @@ class Ukol:
     def __str__(self):
         return self.name
 
-    def komentar_ukolu(self,komentar):
-        self.komentar = input("přidej komentář k úkolu")
-
 
 def vypis_ukolu(depository):
     print("Aktuální úkoly: ")
