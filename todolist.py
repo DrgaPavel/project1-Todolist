@@ -19,19 +19,35 @@ def vypis_ukolu(depository):
 def vymaz_obrazovku():
     print("\n" * 100)
 
+def smaz_ukol(index):
+    uloziste.pop(index)
 
 uloziste=[]
-k="y"
+k=""
 
-while k=="y" or k=="Y":
-    vypis_ukolu(uloziste)
-    task=input("Vlož nový úkol:  ")
-    u=Ukol(task)
-    uloziste.append(u)
-    k=input("Chceš přidat další úkol? [Y/N]")
-    vymaz_obrazovku()
 
+while k!="exit":
+
+    k=input("Pro vkládání úkolů napište libovolný text, pro smazání úkolu napiš smazat, pro vypnutí aplikace napiš exit:  ")
+    if k=="smazat":
+        i=input("Zadejte číslo úkolu, který si přejete smazat (číslováno od 0): ")
+        smaz_ukol(int(i))
+        vymaz_obrazovku()
+        vypis_ukolu(uloziste)
+    elif k!="exit":
+        task = input("Vlož nový úkol:  ")
+        u = Ukol(task)
+        uloziste.append(u)
+        vymaz_obrazovku()
+        vypis_ukolu(uloziste)
+
+
+vymaz_obrazovku()
 vypis_ukolu(uloziste)
+print("Děkujeme, že používáte naši aplikaci.")
+
+
+
 
 
 
